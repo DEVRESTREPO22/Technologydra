@@ -1,0 +1,135 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('img/inicioseccion.png');
+            background-size: cover; /* Mejor ajuste para pantallas grandes */
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #000;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .header .logo img {
+            height: 50px;
+        }
+
+        .login-box {
+            position: fixed;
+            top: 50%;
+            right: 70px;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            max-width: 100%;
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .input-group-text {
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header con el logo -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.php" class="text-decoration-none">
+                <img src="img/logo2.png" alt="Logo de Tienda">
+            </a>
+        </div>
+    </header>
+
+    <!-- Formulario de inicio de sesión -->
+    <div class="login-box">
+        <h2>Iniciar Sesión</h2>
+
+        <form action="procesar_login.php" method="POST">
+            <!-- Nombre de usuario -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Nombre de usuario</label>
+                <input type="text" class="form-control" id="username" name="username" required aria-label="Nombre de usuario">
+            </div>
+
+            <!-- Contraseña con botón de mostrar/ocultar -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" name="password" required minlength="6" autocomplete="off" aria-label="Contraseña">
+                    <span class="input-group-text" onclick="togglePassword()">
+                        <i class="bi bi-eye" id="togglePasswordIcon"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Botón de inicio de sesión -->
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+
+        <div class="footer mt-3">
+            <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </div>
+    </div>
+
+    <!-- Script para mostrar/ocultar contraseña -->
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const icon = document.getElementById('togglePasswordIcon');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.replace('bi-eye', 'bi-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.replace('bi-eye-slash', 'bi-eye');
+            }
+        }
+    </script>
+
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

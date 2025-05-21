@@ -1,0 +1,92 @@
+/* Reseteo de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo y tipo de fuente general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Fondo de la página negro */
+    color: white; /* Texto en blanco por defecto */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #000000; /* Fondo del header negro */
+    color: white; /* Color de texto en blanco */
+    align-items: center;
+}
+
+
+header .logo img {
+    height: 75px;
+}
+
+header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+header #login-btn {
+    padding: 10px 20px;
+    background-color: #04e8ff; /* Botón azul */
+    color: rgb(255, 255, 255); /* Texto del botón en blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header .cart-icon img {
+    width: 30px;
+    cursor: pointer;
+}
+
+/* Catálogo */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.catalog .product {
+    background-color: #ffffff; /* Fondo oscuro para las tarjetas de los productos */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.catalog .product:hover {
+    transform: translateY(-10px);
+}
+
+.catalog .product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.catalog .product h3 {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    color: rgb(3, 3, 3); /* Títulos de los productos en blanco */
+}
+
+.catalog .product p {
+    color: #5a5050; /* Descripción en gris claro para un buen contraste */
+    margin-bottom: 10px;
+}
+
+.catalog .product .price {
+    font-size: 1.4rem;
+    color: #04e8ff; /* Precio en color azul */
+    font-weight: bold;
+}

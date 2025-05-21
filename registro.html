@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Estilos generales para el body */
+        body {
+            background-image: url('img/fondo.svg'); /* Fondo de la página */
+            background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+            display: flex;
+            flex-direction: column; /* Organiza el contenido en una columna */
+        }
+
+        /* Estilo del header */
+        .header {
+            background-color: #000000;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%; /* El header ocupa todo el ancho */
+            z-index: 10; /* Asegura que el header quede por encima del contenido */
+        }
+
+        .header .logo img {
+            height: 50px;
+        }
+
+        /* Formulario de registro */
+        .register-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%; /* El formulario debe ser flexible en el ancho */
+            max-width: 450px; /* Limita el ancho máximo */
+            position: absolute; /* Lo fija en la parte derecha */
+            top: 80px; /* Espacio desde la parte superior */
+            right: 70px; /* Espacio desde el borde derecho */
+            z-index: 100; /* Asegura que esté por encima de otros elementos */
+        }
+
+        /* Encabezado del formulario con color personalizado */
+        .register-box h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #04e8ff; /* Color azul especificado */
+        }
+
+        .register-box button {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .register-box .form-label {
+            font-weight: bold;
+        }
+
+        /* Estilos para el pie de página */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Contenedor para el contenido que permite el desplazamiento */
+        .content-wrapper {
+            flex-grow: 1; /* Hace que el contenido ocupe el espacio disponible */
+            overflow-y: auto; /* Permite desplazamiento en caso de que el contenido sea largo */
+            padding-bottom: 50px; /* Espacio para que el footer no se superponga al contenido */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header con el logo -->
+    <header class="header">
+        <div class="logo">
+            <!-- Logo como enlace que redirige al inicio -->
+            <a href="index.php" class="text-decoration-none">
+                <img src="img/logo2.png" alt="Logo de Tienda">
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenedor principal que permite el desplazamiento -->
+    <div class="content-wrapper">
+        <!-- Formulario de registro en el lado derecho -->
+        <div class="register-box">
+            <h2>Crea una cuenta nueva</h2> <!-- Encabezado con el color #04e8ff -->
+
+            <form action="procesar_registro.php" method="POST">
+                <!-- Nombre -->
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                </div>
+
+                <!-- Apellido -->
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+
+                <!-- Fecha de Nacimiento -->
+                <div class="mb-3">
+                    <label for="birthdate" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                </div>
+
+                <!-- Botón de Registro -->
+                <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+            </form>
+
+            <div class="footer mt-3">
+                <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+ 
